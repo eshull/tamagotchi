@@ -25,10 +25,12 @@ export class Tamagotchi {
     }
   }
 
-  // sleep() {
-  //
-  // }
-  //
+  putToBed() {
+    if (this.sleep <100) {
+      this.sleep += 20;
+    }
+  }
+
   // bathroom() {
   //
   // }
