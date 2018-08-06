@@ -45,9 +45,9 @@ export class Tamagotchi {
     }
   }
 
-  // exercise() {
-  //
-  // }
+  exercise() {
+
+  }
   //
   // soothe() {
   //
