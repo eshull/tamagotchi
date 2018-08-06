@@ -31,12 +31,12 @@ export class Tamagotchi {
       else if (this.sleep > 60 && this.life < 100) {
         this.wellrested();
       }
-      if (this.weight >= 100) {
-        this.obese();
+      if (this.weight >= 100 || this.weight <= 20) {
+        this.underOrOverWeight();
       }
-      // else if (this.bathroom < 40 && this.life < 100) {
-      //   this.life += 5;
-      // }
+      else if (this.weight > 20 && this.weight < 100 && this.life < 100) {
+        this.healthyWeight();
+      }
     }, 10000);
 
   }
@@ -57,8 +57,12 @@ export class Tamagotchi {
     this.happiness -=5;
   }
 
-  obese(){
+  underOrOverWeight(){
     this.life -= 5;
+  }
+
+  healthyWeight(){
+    this.life +=5;
   }
 
   wellrested(){

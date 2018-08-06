@@ -92,22 +92,46 @@ describe ('Tamagotchi',function(){
   })
 
   it ('will increase life if food is over 60', function(){
-    ourPet.life = 90;
-    ourPet.food = 70;
-    ourPet.bathroom = 45;
+    ourPet.life = 80;
+    ourPet.food = 70; // life + 5
+    ourPet.bathroom = 35;
+    ourPet.weight = 60; // life + 5
+    ourPet.sleep = 50;
     jasmine.clock().tick(10001);
-    expect(ourPet.life).toEqual(95)
+    console.log(ourPet.food);
+    console.log(ourPet.life);
+    expect(ourPet.life).toEqual(90)
   })
 
   it ('will increase life if sleep is over 60', function(){
-    ourPet2.life = 70;
-    ourPet2.food = 40;
+    ourPet2.life = 80;
+    ourPet2.food = 70; // life + 5
     ourPet2.bathroom = 35;
-    ourPet2.sleep = 70; // + 5 life
+    ourPet2.weight = 60; // life + 5
+    ourPet2.sleep = 70; // life + 5
     jasmine.clock().tick(10001);
     console.log("This is sleep for ourPet2: " + ourPet2.sleep);
     console.log("This is life for ourPet2: " + ourPet2.life);
-    expect(ourPet2.life).toEqual(75)
+    expect(ourPet2.life).toEqual(95)
   })
+  //
+  // it ('should show if our pet is over weight', function(){
+  //   ourPet2.life = 90;
+  //   ourPet2.food = 70;
+  //   ourPet2.bathroom = 35;
+  //   ourPet2.weight = 105;
+  //   jasmine.clock().tick(10001);
+  //   expect(ourPet2.life).toEqual(85)
+  // })
+  //
+  // it ('should increase health if our pet is between a good weight', function(){
+  //   ourPet2.life = 90;
+  //   ourPet2.food = 70;
+  //   ourPet2.bathroom = 35;
+  //   ourPet2.weight = 105;
+  //   jasmine.clock().tick(10001);
+  //   expect(ourPet2.life).toEqual(85)
+  // })
+
 
 })
