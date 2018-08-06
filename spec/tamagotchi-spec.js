@@ -51,13 +51,21 @@ describe ('Tamagotchi',function(){
 
   it ('should increase our pets need to go to the bathroom', function(){
     jasmine.clock().tick(10001);
-    expect(ourPet.bathroom).toEqual(10);
+    ourPet.feed()
+    expect(ourPet.bathroom).toEqual(5);
   })
 
   it ('should decrease our pets bathroom level', function(){
     jasmine.clock().tick(10001)
+    ourPet.feed();
     ourPet.bathroomBreak();
-    expect(ourPet.bathroom).toEqual(-5)
+    expect(ourPet.bathroom).toEqual(-10)
+  })
+
+  it ('increase bathroom level over time period if over 40', function(){
+    ourPet.bathroom = 45;
+    jasmine.clock().tick(10001);
+    expect(ourPet.bathroom).toEqual(50)
   })
 
 })

@@ -15,14 +15,22 @@ export class Tamagotchi {
       this.food -= 5;
       this.sleep -= 5;
       this.life -= 5;
-      this.bathroom += 10;
+      if (this.bathroom >= 40) {
+        this.bathroomThreshold();
+      }
     }, 10000);
 
   }
 
+  bathroomThreshold() {
+      console.log(this.bathroom);
+      this.bathroom += 5;
+  }
+  
   feed() {
     if (this.food < 100) {
       this.food += 20;
+      this.bathroom += 5;
     }
   }
 
