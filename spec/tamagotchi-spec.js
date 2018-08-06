@@ -21,4 +21,21 @@ describe ('Tamagotchi',function(){
     jasmine.clock().tick(10001)
     expect(ourPet.food).toEqual(95)
   })
+
+  it ('should decrease our pets sleep', function(){
+    jasmine.clock().tick(10001)
+    expect(ourPet.sleep).toEqual(95)
+  })
+
+  it ('should decrease our pets life', function(){
+    jasmine.clock().tick(10001)
+    expect(ourPet.sleep).toEqual(95)
+  })
+
+  it ('should decrease our pets feelings', function(){
+    jasmine.clock().tick(10001)
+    expect(ourPet.sleep).toEqual(95)
+  })
+
+
 })

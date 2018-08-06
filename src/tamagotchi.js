@@ -13,7 +13,9 @@ export class Tamagotchi {
   realTime() {
     setInterval(() => {
       this.food -= 5;
-      console.log(this.food);
+      this.sleep -= 5;
+      this.life -= 5;
+      this.feelings -= 5;
     }, 10000);
 
   }
