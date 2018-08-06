@@ -2,11 +2,14 @@ import { Tamagotchi } from './../src/tamagotchi'
 
 describe ('Tamagotchi',function(){
   let ourPet;
+  let ourPet2;
 
   beforeEach(function(){
     ourPet = new Tamagotchi("Peter");
+    ourPet2 = new Tamagotchi("Frank")
     jasmine.clock().install();
     ourPet.realTime();
+    ourPet2.realTime();
   })
 
   afterEach(function(){
@@ -79,6 +82,32 @@ describe ('Tamagotchi',function(){
     ourPet.happiness -= 10;
     ourPet.soothe();
     expect(ourPet.happiness).toEqual(105)
+  })
+
+  it ('will increase life if bathroom is under 40', function(){
+    ourPet.life = 90;
+    ourPet.bathroom = 45;
+    jasmine.clock().tick(10001);
+    expect(ourPet.happiness).toEqual(95)
+  })
+
+  it ('will increase life if food is over 60', function(){
+    ourPet.life = 90;
+    ourPet.food = 70;
+    ourPet.bathroom = 45;
+    jasmine.clock().tick(10001);
+    expect(ourPet.life).toEqual(95)
+  })
+
+  it ('will increase life if sleep is over 60', function(){
+    ourPet2.life = 70;
+    ourPet2.food = 40;
+    ourPet2.bathroom = 35;
+    ourPet2.sleep = 70; // + 5 life
+    jasmine.clock().tick(10001);
+    console.log("This is sleep for ourPet2: " + ourPet2.sleep);
+    console.log("This is life for ourPet2: " + ourPet2.life);
+    expect(ourPet2.life).toEqual(75)
   })
 
 })
