@@ -15,6 +15,7 @@ export class Tamagotchi {
       this.food -= 5;
       this.sleep -= 5;
       this.life -= 5;
+      this.bathroom += 10;
     }, 10000);
 
   }
@@ -31,10 +32,12 @@ export class Tamagotchi {
     }
   }
 
-  // bathroom() {
-  //
-  // }
-  //
+  bathroomBreak() {
+    if (this.bathroom > 0) {
+      this.bathroom -= 15;
+    }
+  }
+
   // exercise() {
   //
   // }

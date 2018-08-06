@@ -49,4 +49,15 @@ describe ('Tamagotchi',function(){
     expect(ourPet.sleep).toEqual(115)
   })
 
+  it ('should increase our pets need to go to the bathroom', function(){
+    jasmine.clock().tick(10001);
+    expect(ourPet.bathroom).toEqual(10);
+  })
+
+  it ('should decrease our pets bathroom level', function(){
+    jasmine.clock().tick(10001)
+    ourPet.bathroomBreak();
+    expect(ourPet.bathroom).toEqual(-5)
+  })
+
 })
