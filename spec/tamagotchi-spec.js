@@ -68,4 +68,17 @@ describe ('Tamagotchi',function(){
     expect(ourPet.bathroom).toEqual(50)
   })
 
+  it ('will decrease parameters if exercise is used', function(){
+    jasmine.clock().tick(10001);
+    ourPet.exercise();
+    expect(ourPet.weight).toEqual(45)
+  })
+
+  it ('will increase happiness when soothed', function(){
+    jasmine.clock().tick(10001);
+    ourPet.happiness -= 10;
+    ourPet.soothe();
+    expect(ourPet.happiness).toEqual(105)
+  })
+
 })

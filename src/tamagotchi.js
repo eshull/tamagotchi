@@ -5,7 +5,7 @@ export class Tamagotchi {
     this.sleep = 100;
     this.bathroom = 0;
     this.weight = 50;
-    this.feelings = 100;
+    this.happiness = 100;
     this.life = 100;
 
   }
@@ -30,6 +30,7 @@ export class Tamagotchi {
     if (this.food < 100) {
       this.food += 20;
       this.bathroom += 5;
+      this.weight += 5;
     }
   }
 
@@ -46,11 +47,15 @@ export class Tamagotchi {
   }
 
   exercise() {
-
+    this.weight -= 5;
+    this.sleep -= 10;
+    this.food -= 10;
   }
-  //
-  // soothe() {
-  //
-  // }
+
+  soothe() {
+    if (this.happiness < 100) {
+      this.happiness += 15;
+    }
+  }
 
 }
