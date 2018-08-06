@@ -15,15 +15,16 @@ export class Tamagotchi {
       this.food -= 5;
       this.sleep -= 5;
       this.life -= 5;
-      this.feelings -= 5;
     }, 10000);
 
   }
 
-  // feed() {
-  //
-  // }
-  //
+  feed() {
+    if (this.food < 100) {
+      this.food += 20;
+    }
+  }
+
   // sleep() {
   //
   // }
