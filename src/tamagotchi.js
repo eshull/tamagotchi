@@ -23,10 +23,9 @@ export class Tamagotchi {
   }
 
   bathroomThreshold() {
-      console.log(this.bathroom);
       this.bathroom += 5;
   }
-  
+
   feed() {
     if (this.food < 100) {
       this.food += 20;
