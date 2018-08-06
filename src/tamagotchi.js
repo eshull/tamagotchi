@@ -16,30 +16,38 @@ export class Tamagotchi {
       if (this.bathroom >= 40) {
         this.bathroomThreshold();
       }
-      else if (this.bathroom < 30 && this.life < 100) {
+      else if (this.bathroom < 30 && this.life <= 100) {
         this.wellpottied();
       }
       if (this.food <= 20) {
         this.starving();
       }
-      else if (this.food > 60 && this.life < 100) {
+      else if (this.food > 60 && this.life <= 100) {
         this.wellfed();
       }
       if (this.sleep <= 20) {
         this.exhaustion();
       }
-      else if (this.sleep > 60 && this.life < 100) {
+      else if (this.sleep > 60 && this.life <= 100) {
         this.wellrested();
       }
       if (this.weight >= 100 || this.weight <= 20) {
         this.underOrOverWeight();
       }
-      else if (this.weight > 20 && this.weight < 100 && this.life < 100) {
+      else if (this.weight > 20 && this.weight < 100 && this.life <= 100) {
         this.healthyWeight();
       }
     }, 10000);
-
   }
+
+refreshLife() {
+  setInterval(() => {
+      let life = this.life;
+      console.log(life);
+      return life;
+    }, 1000);
+  }
+
 
   bathroomThreshold() {
       this.bathroom += 5;
@@ -78,16 +86,14 @@ export class Tamagotchi {
   }
 
   feed() {
-    if (this.food < 100) {
-      this.food += 20;
-      this.bathroom += 5;
-      this.weight += 5;
-      this.happiness += 5;
-    }
+    this.food += 20;
+    this.bathroom += 5;
+    this.weight += 5;
+    this.happiness += 5;
   }
 
   putToBed() {
-    if (this.sleep <100) {
+    if (this.sleep <= 100) {
       this.sleep += 20;
       this.happiness += 5;
       this.food -= 10;
@@ -108,11 +114,8 @@ export class Tamagotchi {
   }
 
   soothe() {
-    if (this.happiness < 100) {
+    if (this.happiness <= 100) {
       this.happiness += 15;
     }
   }
-
-
-
 }
