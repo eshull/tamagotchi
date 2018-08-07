@@ -8,6 +8,7 @@ function refreshLife(object) {
   let that = object;
   setInterval(() => {
       $('.tamagotchi').text(that.life)
+      console.log(that);
     }, 1000);
   }
 

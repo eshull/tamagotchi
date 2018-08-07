@@ -37,7 +37,7 @@ export class Tamagotchi {
       else if (this.weight > 20 && this.weight < 100 && this.life <= 100) {
         this.healthyWeight();
       }
-    }, 10000);
+    }, 2000);
   }
 
   bathroomThreshold() {
@@ -47,17 +47,17 @@ export class Tamagotchi {
   }
 
   starving(){
-    this.life -= 5;
+    this.life -= 10;
     this.happiness -= 5;
   }
 
   exhaustion(){
-    this.life -= 5;
+    this.life -= 10;
     this.happiness -=5;
   }
 
   underOrOverWeight(){
-    this.life -= 5;
+    this.life -= 10;
   }
 
   healthyWeight(){
