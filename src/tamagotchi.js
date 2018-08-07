@@ -40,15 +40,6 @@ export class Tamagotchi {
     }, 10000);
   }
 
-refreshLife() {
-  setInterval(() => {
-      let life = this.life;
-      console.log(life);
-      return life;
-    }, 1000);
-  }
-
-
   bathroomThreshold() {
       this.bathroom += 5;
       this.life -= 5;

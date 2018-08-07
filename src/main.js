@@ -4,15 +4,22 @@ import $ from 'jquery';
 // import 'bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
+function refreshLife(object) {
+  let that = object;
+  setInterval(() => {
+      $('.tamagotchi').text(that.life)
+    }, 1000);
+  }
 
 $(document).ready(function() {
   $('#new_pet').submit(function(event) {
     event.preventDefault();
-    let petName = $("#new_pet").find('input[name=pet_name]').val()
-    let pet1 = new Tamagotchi(petName)
+    let petName = $("#new_pet").find('input[name=pet_name]').val();
+    let pet1 = new Tamagotchi(petName);
+    console.log(pet1);
+    $('.tamagotchi').text(pet1.life);
     pet1.realTime()
-    pet1.refreshLife()
-    $('.tamagotchi').html("<h3>" + pet1.life + "</h3>")
+    refreshLife(pet1)
   });
 });
 
