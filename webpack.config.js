@@ -2,9 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './weather-interface.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -14,13 +15,15 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
+    new Dotenv(),
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'tamagotchi',
-      template: './src/index.html',
+      template: './weather.html',
       inject: 'body'
-    })
+    }),
+
   ],
   module: {
     rules: [

@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+  <div class="container">
     <div class="form_container">
       <form id="new_pet">
         <label for="pet_name">Input your pet's name:</label>
@@ -14,30 +15,51 @@
 
     </div>
     <div class="tamagotchi">
-      <img src="#" alt="">
+      <p id="name_id"></p>
+      <p id="life_spec"></p>
+      <p id="food_spec"></p>
+      <p id="sleep_spec"></p>
+      <p id="bathroom_spec"></p>
+      <p id="weight_spec"></p>
+      <p id="happiness_spec"></p>
     </div>
-    
-    <div class="icon_row">
-      <div class="icon">
-        <button type="button" id="exercise" name="button"><img src="img/exercise.svg" alt=""></button>
-        <h3>Exercise</h3>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="icon_row">
+            <div class="icon">
+              <button type="button" class="btnStyle" id="exercise" name="button">Exercise</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="icon">
+            <button type="button" class="btnStyle" id="feed" name="button">Feed</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="icon">
+            <button type="button" class="btnStyle" id="sleep" name="button">Sleep</button>
+          </div>
+        </div>
       </div>
-      <div class="icon">
-        <button type="button" id="feed" name="button"><img src="img/feed.svg" alt=""></button>
-        <h3>Feed</h3>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="icon">
+            <button type="button" class="btnStyle" id="potty" name="button">Potty</button>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="icon">
+            <button type="button" class="btnStyle" id="soothe" name="button">Soothe</button>
+          </div>
+        </div>
       </div>
-      <div class="icon">
-        <button type="button" id="sleep" name="button"><img src="img/sleep.svg" alt=""></button>
-        <h3>Sleep</h3>
-      </div>
-      <div class="icon">
-        <button type="button" id="potty" name="button"><img src="img/potty.svg" alt=""></button>
-        <h3>Potty</h3>
-      </div>
-      <div class="icon">
-        <button type="button" id="soothe" name="button"><img src="img/soothe.svg" alt=""></button>
-        <h3>Soothe</h3>
-      </div>
-    </div>
+
+  </div>
+</div>
+
+
+
   </body>
 </html>
