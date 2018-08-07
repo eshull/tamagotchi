@@ -50,5 +50,47 @@ $(document).ready(function() {
     $("#soothe").click(function(){
       pet1.soothe()
     })
+
+    // let request = new XMLHttpRequest();
+    // let url = `http://api.giphy.com/v1/gifs/m096tqgmH5Nmw?api_key=qwCP7BLZ5HMzmejAQLmGB0REUMKUK5b1`;
+    //
+    // let getElements = function(response) {
+    //   var image_gif = response.data.images.fixed_width.url;
+    //   document.getElementById('creature_gif').innerHTML = "<img src=" + image_gif + ">";
+    //   console.log(image_gif);
+    // }
+    //
+    // request.onreadystatechange = function() {
+    //   if (this.readyState === 4 && this.status === 200) {
+    //     let response = JSON.parse(this.responseText);
+    //
+    //     console.log(response.data.images.original.url);
+    //     getElements(response);
+    //   }
+    // }
+    //
+    // request.open("GET", url, true);
+    // request.send();
+
+    let request = new XMLHttpRequest();
+    let url = `http://api.giphy.com/v1/gifs/search?api_key=qwCP7BLZ5HMzmejAQLmGB0REUMKUK5b1&q=${petName}`;
+    let getElements = function(response) {
+      let randomNumber = Math.floor(Math.random() * 24);
+      var image_gif = response.data[randomNumber].images.fixed_width.url;
+      document.getElementById('creature_gif').innerHTML = "<img src=" + image_gif + ">";
+    }
+
+    request.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        let response = JSON.parse(this.responseText);
+
+        console.log(response);
+        getElements(response);
+      }
+    }
+
+    request.open("GET", url, true);
+    request.send();
+
   });
 });
